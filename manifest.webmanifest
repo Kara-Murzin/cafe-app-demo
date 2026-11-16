@@ -1,0 +1,13 @@
+{
+  "name": "Sunny Side — демо",
+  "short_name": "Sunny Side",
+  "description": "Демо-концепт приложения для гостей кафе: меню, предзаказ, бонусы, бронь.",
+  "lang": "ru",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FAFAF6",
+  "theme_color": "#7F1E24",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

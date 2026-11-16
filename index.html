@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sunny Side — демо приложения для кафе</title>
+  <meta name="description" content="Демо-концепт приложения для кафе: меню, предзаказ, бонусы и бронь столика.">
+  <meta name="theme-color" content="#7F1E24">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="stage-note">
+    <p class="stage-title">Sunny Side</p>
+    <p>Демо-концепт приложения для гостей кафе. Кафе вымышленное. Откройте с телефона, чтобы увидеть его в настоящем размере.</p>
+    <p>Заказы, оплата и бронь здесь не настоящие: данные хранятся только в этом браузере.</p>
+  </aside>
+
+  <div class="phone">
+    <main id="screen" class="screen" tabindex="-1"></main>
+
+    <button id="cartbar" class="cartbar" hidden></button>
+
+    <nav class="tabs" aria-label="Разделы">
+      <button data-tab="menu" class="tab">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v7a3 3 0 0 0 6 0V4M8 4v16M17 4c-2 1-3 3.500-3 7h3zm0 7v9"/></svg>
+        <span>Меню</span>
+      </button>
+      <button data-tab="order" class="tab">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.200 11H6.200zM9 8V6.500a3 3 0 0 1 6 0V8"/></svg>
+        <span>Заказ</span><i id="tabcount" class="tabcount" hidden></i>
+      </button>
+      <button data-tab="bonus" class="tab">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="8.500" ry="7.500"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>Бонусы</span>
+      </button>
+      <button data-tab="cafe" class="tab">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.500-6-6.500-10.500a6.500 6.500 0 0 1 13 0C18.500 15 12 21 12 21z"/><circle cx="12" cy="10.500" r="2.300"/></svg>
+        <span>Кафе</span>
+      </button>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="menu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
