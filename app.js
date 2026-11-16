@@ -275,8 +275,9 @@ function renderBonus() {
   const gifts = Math.floor(state.stamps / STAMPS_FOR_GIFT);
   const filled = state.stamps % STAMPS_FOR_GIFT;
   const left = STAMPS_FOR_GIFT - filled;
-  const eggs = Array.from({ length: STAMPS_FOR_GIFT }, (_, i) =>
-    `<li class="egg ${i < filled ? "on" : ""}" style="--tilt:${[-8, 5, -3, 9, -6, 4][i]}deg"><i></i></li>`).join("");
+  const CUP = `<svg viewBox="0 0 48 48" aria-hidden="true"><path class="steam" d="M17 7c-2.500 3 2.500 4.500 0 8M25 7c-2.500 3 2.500 4.500 0 8"/><path class="body" d="M9 19h26v8a13 13 0 0 1-26 0z"/><path class="handle" d="M35 22h2.500a4.500 4.500 0 0 1 0 9H33"/><path class="saucer" d="M8 43h28"/></svg>`;
+  const cups = Array.from({ length: STAMPS_FOR_GIFT }, (_, i) =>
+    `<li class="cup ${i < filled ? "on" : ""}" style="--tilt:${[-8, 5, -3, 9, -6, 4][i]}deg">${i < filled ? CUP : ""}</li>`).join("");
 
   screen.innerHTML = `
     <header class="page-head"><h1>Бонусы</h1></header>
@@ -293,7 +294,7 @@ function renderBonus() {
 
     <section class="stamps">
       <h2>Шестой кофе в подарок</h2>
-      <ul class="eggs" aria-label="Отмечено ${filled} из ${STAMPS_FOR_GIFT}">${eggs}</ul>
+      <ul class="cups" aria-label="Отмечено ${filled} из ${STAMPS_FOR_GIFT}">${cups}</ul>
       <p>${gifts
         ? `У вас ${gifts} ${plural(gifts, ["подарочный кофе", "подарочных кофе", "подарочных кофе"])}. Скажите бариста при заказе.`
         : `Ещё ${left} ${plural(left, ["кофе", "кофе", "кофе"])}, и следующий за наш счёт.`}</p>

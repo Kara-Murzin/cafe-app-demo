@@ -183,20 +183,17 @@ ul, ol { list-style: none; }
 .qr svg { display: block; width: 100%; height: 100%; }
 .qr-fallback { font-size: 11px; color: var(--ink); word-break: break-all; }
 
-/* Штампы-яичницы: единственный «громкий» элемент интерфейса */
+/* Штампы-чашки: единственный «громкий» элемент интерфейса */
 .stamps { margin-top: 26px; padding: 20px; border-radius: 24px; background: #FFF4D2; }
 .stamps h2 { font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.25; }
 .stamps p { margin-top: 14px; font-size: 15px; }
-.eggs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 16px; }
-.egg { aspect-ratio: 1; display: grid; place-items: center; border: 2px dashed #D9BE74; border-radius: 50%; }
-.egg i { display: none; }
-.egg.on {
-  border: 0; background: var(--white);
-  border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
-  transform: rotate(var(--tilt));
-  box-shadow: 0 2px 0 #E9D9A8;
-}
-.egg.on i { display: block; width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--yolk); box-shadow: inset -3px -3px 0 rgba(180, 110, 0, .22); }
+.cups { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 16px; }
+.cup { aspect-ratio: 1; display: grid; place-items: center; border: 2px dashed #D9BE74; border-radius: 50%; }
+.cup.on { border: 0; background: var(--white); transform: rotate(var(--tilt)); box-shadow: 0 2px 0 #E9D9A8; }
+.cup svg { width: 70%; height: 70%; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.cup .body { fill: var(--wine); }
+.cup .handle, .cup .saucer { stroke: var(--wine); stroke-width: 3; }
+.cup .steam { stroke: var(--yolk); stroke-width: 2.500; }
 
 .history li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .history li:last-child { border-bottom: 0; }
