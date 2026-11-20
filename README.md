@@ -1,45 +1,45 @@
-# Sunny Side — демо приложения для гостей кафе
+# Sunny Side — demo of an app for cafe guests
 
-Демо-концепт приложения для кафе с завтраками. Кафе Sunny Side вымышленное,
-меню и цены условные. Заказы, оплата и брони никуда не отправляются:
-все данные хранятся в браузере (localStorage).
+A demo concept of an app for a breakfast cafe. The Sunny Side cafe is fictional,
+the menu and prices are made up. Orders, payments and bookings are not sent anywhere:
+all data is stored in the browser (localStorage). The interface is in Russian.
 
-Открыть: https://kara-murzin.github.io/cafe-app-demo/
+Open: https://kara-murzin.github.io/cafe-app-demo/
 
-## Что внутри
+## What is inside
 
-- **Меню.** Кухня и бар, поиск, переход по разделам.
-- **Заказ.** Корзина, получение «с собой / в зале / доставка», время, списание бонусов,
-  кнопка оплаты через Kaspi (имитация) и статус заказа.
-- **Бонусы.** Счёт, QR-код гостя для кассы, карта «шестой кофе в подарок», история.
-- **Кафе.** Бронь стола и кнопки связи (в демо ведут к разработчику).
+- **Menu.** Kitchen and bar, search, jumping between sections.
+- **Order.** Cart, pickup type (takeaway / in the cafe / delivery), time, paying with bonus points,
+  a Kaspi payment button (simulated) and order status.
+- **Bonuses.** Balance, the guest's QR code for the cashier, a "sixth coffee is free" card, history.
+- **Cafe.** Table booking and contact buttons (in the demo they lead to the developer).
 
-## Запуск
+## Running
 
-Сборка не нужна, это статические файлы.
+No build step is needed, these are static files.
 
 ```bash
 python3 -m http.server 5178
 ```
 
-Затем откройте http://localhost:5178.
+Then open http://localhost:5178.
 
-## Файлы
+## Files
 
-| Файл | Что в нём |
+| File | What is in it |
 |---|---|
-| `menu.js` | Меню: разделы, блюда, цены |
-| `app.js` | Экраны и логика: корзина, заказ, бонусы, бронь |
-| `styles.css` | Оформление |
-| `index.html` | Каркас страницы |
+| `menu.js` | Menu: sections, dishes, prices |
+| `app.js` | Screens and logic: cart, order, bonuses, booking |
+| `styles.css` | Styles |
+| `index.html` | Page skeleton |
 
-Правила бонусов задаются в начале `app.js`: `BONUS_RATE` (доля возврата)
-и `STAMPS_FOR_GIFT` (какой по счёту кофе в подарок).
+The bonus rules are set at the top of `app.js`: `BONUS_RATE` (the share returned as points)
+and `STAMPS_FOR_GIFT` (which coffee in a row is free).
 
-## Что потребуется для настоящего продукта
+## What a real product would need
 
-- сервер и база гостей, вход по номеру телефона;
-- интеграция с кассовой системой кафе (меню, стоп-лист, заказы);
-- приём оплаты через Kaspi;
-- панель для владельца: заказы, брони, акции, статистика;
-- пуш-уведомления.
+- a server and a guest database, sign-in by phone number;
+- integration with the cafe's point-of-sale system (menu, stop list, orders);
+- accepting payments through Kaspi;
+- a panel for the owner: orders, bookings, promotions, statistics;
+- push notifications.
